@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Finn Guo | AI for Healthcare</title>
+  <title>Finn Guo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Finn Guo - AI for Healthcare & Computational Pathology" />
+  <meta name="description" content="Finn Guo" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
@@ -34,8 +34,6 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-
-    /* 所有正文链接：蓝色 + 下划线 */
     a {
       color: #2563eb;
       text-decoration: underline;
@@ -77,7 +75,6 @@
       color: #4b5563;
     }
 
-    /* 导航里的链接保持干净，没有下划线 */
     .nav-links a {
       color: #4b5563;
       text-decoration: none;
@@ -151,7 +148,6 @@
       border-radius: 6px;
     }
 
-    /* 顶部标签（旧 hero-tag） */
     .tag-row {
       margin-top: 14px;
       display: flex;
@@ -159,7 +155,6 @@
       gap: 8px;
     }
 
-    /* tag 字体调大，比正文更显眼 */
     .tag {
       font-size: 13px;
       padding: 6px 12px;
@@ -242,7 +237,6 @@
       text-align: center;
     }
 
-    /* --- 简化后的 sidebar（老师那种风格） --- */
 
     .profile-sidebar {
       flex: 0 0 320px;
@@ -452,11 +446,10 @@
     <!-- NAVBAR -->
     <header class="nav">
       <div class="nav-left">
-        <span class="nav-icon">🧬 + 💻 + 🩻</span>
+        <span class="nav-icon">🧬 + 💻 + 🩻 = 💡</span>
       </div>
       <nav class="nav-links">
         <a class="nav-link active" href="/">Home</a>
-        <!-- 注意：这里用的是 project.html（单数），和你文件名保持一致 -->
         <a class="nav-link" href="/project.html">Projects</a>
         <a class="nav-link" href="/files/Finn_Guo_CV.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
@@ -473,17 +466,16 @@
           </header>
           <div class="section-body">
             <p>
-              I'm a master's student in Electrical &amp; Computer Engineering at Duke University, advised by
-              <a href="https://rafa.physics.duke.edu/" target="_blank" rel="noopener">Ricardo Henao</a> and
-              <a href="https://biostat.duke.edu/people/jichun-xie" target="_blank" rel="noopener">Jichun Xie</a>.
-              I work with the <a href="https://medml.duke.edu/" target="_blank" rel="noopener">Machine Learning in Healthcare group</a>
-              and the <a href="https://biostat.duke.edu/" target="_blank" rel="noopener">Duke Biostatistics &amp; Bioinformatics Department</a>
-              on AI systems that can be embedded into real clinical workflows.
+              I'm a MS student in <b>Electrical &amp; Computer Engineering</b> at <b>Duke University</b>, advised by <b>
+              <a href="https://ece.duke.edu/people/ricardo-henao/" target="_blank" rel="noopener">Dr.Ricardo Henao</a> </b>and
+              <b><a href="https://jichunxie.github.io/" target="_blank" rel="noopener">Dr.Jichun Xie</a></b>.
+              I work with the pathologists from <a href="https://pathology.duke.edu/" target="_blank" rel="noopener">Department of Pathology</a> at <b>Duke health</b>
+              on AI systems that can be embedded into real clinical workflows and develop cross-modality foundation models to assist clinical reasoning.
             </p>
             <p>
-              Before Duke, I completed my B.S. in Information Management &amp; Systems at Nankai University,
-              where I received solid training in programming, data systems, and product / UI design, and spent four
-              unforgettable years singing in NKChoir directed by Prof. Meng.
+              Before Duke, I completed my <b>B.S. in Information Management &amp; Systems</b> at <b>Nankai University</b>,
+              where I received solid training in programming, data systems, and product / UI design, and spent
+              irreplacable 4 years singing in NKChoir directed by Prof. Meng.
             </p>
             <p class="hero-body">
               "A journey of a thousand miles begins with a single step."
@@ -497,9 +489,11 @@
           <div class="section-body">
             <p>Broadly, my research interests include:</p>
             <div class="research-tags">
-              <span class="tag">AI for Healthcare &amp; Clinical Decision Support</span>
-              <span class="tag">Computational Pathology &amp; Medical Imaging</span>
-              <span class="tag">Multimodal Modeling (WSI + text + EHR)</span>
+              <span class="tag">AI4Health</span>
+              <span class="tag">Clinical Reasoning &amp; Decision support</span>
+              <span class="tag">Computational Pathology</span>
+              <span class="tag">Medical Imaging</span>
+              <span class="tag">Multimodal Modeling</span>
               <span class="tag">Uncertainty-aware &amp; Interpretable ML</span>
             </div>
             <p>
@@ -517,28 +511,10 @@
           <div class="highlight-list">
             <div class="highlight-item">
               <strong>Counting Clinical Clues</strong>
-              <span class="highlight-label">ML4H 2024 · Accepted</span>
+              <span class="highlight-label">ML4H 2025 · Accepted on Oct 10th</span>
               <p>
                 Developed a lightweight probabilistic baseline that can match a large language model for
                 clinical text reasoning, at far lower cost and with transparent uncertainty estimates.
-              </p>
-            </div>
-
-            <div class="highlight-item">
-              <strong>PatchLens</strong>
-              <span class="highlight-tag">Web-based WSI viewer</span>
-              <p>
-                Building a WSI viewer and diagnostic platform for GI pathology with VAE-based anomaly
-                detection, p-value / likelihood-ratio heatmaps, and assist-on/off modes for pathologists.
-              </p>
-            </div>
-
-            <div class="highlight-item">
-              <strong>Multimodal alignment for pathology</strong>
-              <span class="highlight-tag">Ongoing</span>
-              <p>
-                Exploring alignment between WSI features, pathology reports, and structured clinical data to
-                generate medically grounded suggestions and interactive explanations.
               </p>
             </div>
           </div>
