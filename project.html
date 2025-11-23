@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Projects | Finn Guo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f3f4f6;
+      --bg-card: #ffffff;
+      --text-main: #111827;
+      --text-muted: #6b7280;
+      --accent: #2563eb;
+      --border-subtle: #e5e7eb;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.12);
+      --radius-xl: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: radial-gradient(circle at top left, #e0ebff 0, #f3f4f6 40%, #f9fafb 70%);
+      color: var(--text-main);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 32px 20px 64px;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 28px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: #4b5563;
+    }
+
+    .nav-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 30% 30%, #ffffff 0, #22c55e 45%, #15803d 100%);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 14px;
+      color: #4b5563;
+    }
+
+    .nav-link {
+      position: relative;
+      padding-bottom: 2px;
+      cursor: pointer;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, #2563eb, #4f46e5);
+      transition: width 0.18s ease-out;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link.active {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: var(--radius-xl);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      box-shadow: var(--shadow-soft);
+      padding: 24px 26px;
+      backdrop-filter: blur(16px);
+    }
+
+    .page-title {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      margin-bottom: 4px;
+    }
+
+    .page-subtitle {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 8px;
+    }
+
+    .project-item {
+      border-radius: 16px;
+      border: 1px solid #e5e7eb;
+      padding: 16px 18px;
+      background: linear-gradient(135deg, #ffffff, #f9fafb);
+      transition: transform 0.12s ease-out, box-shadow 0.12s ease-out, border-color 0.12s;
+      cursor: default;
+    }
+
+    .project-item:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 40px rgba(15, 23, 42, 0.12);
+      border-color: #d1d5db;
+    }
+
+    .project-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      align-items: baseline;
+      margin-bottom: 4px;
+    }
+
+    .project-title {
+      font-weight: 600;
+      font-size: 15px;
+    }
+
+    .project-meta {
+      font-size: 12px;
+      color: #6b7280;
+      white-space: nowrap;
+    }
+
+    .project-badges {
+      margin-top: 6px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      font-size: 11px;
+    }
+
+    .project-badge {
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #eff6ff;
+      border: 1px solid #dbeafe;
+      color: #1d4ed8;
+    }
+
+    .project-description {
+      font-size: 13px;
+      color: #374151;
+      margin-top: 6px;
+    }
+
+    .project-links {
+      margin-top: 8px;
+      font-size: 12px;
+    }
+
+    .project-link {
+      color: #2563eb;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    .page-footer {
+      margin-top: 26px;
+      font-size: 11px;
+      color: #9ca3af;
+      text-align: center;
+    }
+
+    @media (max-width: 720px) {
+      .card {
+        padding: 20px 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="nav">
+      <div class="nav-left">
+        <div class="nav-dot"></div>
+        <span>Finn Guo</span>
+      </div>
+      <nav class="nav-links">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link active" href="/projects.html">Projects</a>
+        <a class="nav-link" href="/files/Finn_Guo_CV.pdf" target="_blank" rel="noopener">CV</a>
+      </nav>
+    </header>
+
+    <main class="card">
+      <h1 class="page-title">Projects</h1>
+      <p class="page-subtitle">
+        A selection of projects I’ve worked on recently. More details and code can be shared upon request.
+      </p>
+
+      <section class="project-list">
+        <!-- Project 1 -->
+        <article class="project-item">
+          <div class="project-header">
+            <div class="project-title">PatchLens: Assistive WSI Viewer for GI Pathology</div>
+            <div class="project-meta">2024 – ongoing</div>
+          </div>
+          <div class="project-badges">
+            <span class="project-badge">Computational Pathology</span>
+            <span class="project-badge">VAE Anomaly Detection</span>
+            <span class="project-badge">Web-based System</span>
+          </div>
+          <p class="project-description">
+            Designed and implemented a web-based viewer for gigapixel whole slide images (WSIs) with
+            VAE-based anomaly detection, p-value & likelihood-ratio heatmaps, and assist-on/off diagnostic
+            modes. The system is being tested with GI pathologists to evaluate its impact on diagnostic
+            workflow and efficiency.
+          </p>
+          <!-- 如果有 demo 链接，可以在这里加：
+          <p class="project-links">
+            <a class="project-link" href="#" target="_blank" rel="noopener">Demo (internal)</a>
+          </p>
+          -->
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-item">
+          <div class="project-header">
+            <div class="project-title">
+              Counting Clinical Clues: A Lightweight Probabilistic Baseline for Clinical Reasoning
+            </div>
+            <div class="project-meta">ML4H 2024 · accepted</div>
+          </div>
+          <div class="project-badges">
+            <span class="project-badge">AI for Health</span>
+            <span class="project-badge">Clinical Text</span>
+            <span class="project-badge">Uncertainty-aware Inference</span>
+          </div>
+          <p class="project-description">
+            Developed a probabilistic baseline that combines simple feature extraction with calibrated
+            uncertainty estimates to rival large language models on clinical reasoning benchmarks, at a
+            fraction of the computational cost. The method aims to be deployment-friendly for real hospitals.
+          </p>
+        </article>
+
+        <!-- Project 3 (placeholder, 可以后再填) -->
+        <article class="project-item">
+          <div class="project-header">
+            <div class="project-title">Multimodal Alignment between WSIs and Clinical Knowledge</div>
+            <div class="project-meta">Exploratory</div>
+          </div>
+          <div class="project-badges">
+            <span class="project-badge">Multimodal Learning</span>
+            <span class="project-badge">Knowledge Graphs</span>
+          </div>
+          <p class="project-description">
+            Exploring methods to align image embeddings from pathology WSIs with structured knowledge graph
+            representations and clinical text, aiming to provide medically grounded suggestions and
+            patch-level explanations for pathologists.
+          </p>
+        </article>
+      </section>
+    </main>
+
+    <footer class="page-footer">
+      © <span id="year"></span> Finn Guo · Projects
+    </footer>
+  </div>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
