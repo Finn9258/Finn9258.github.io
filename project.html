@@ -218,15 +218,19 @@
       }
     }
     .project-image {
-      margin-top: 12px;
-      text-align: center;
+      width: 100%;
+      margin: 16px 0;
+      display: flex;
+      justify-content: center;
     }
     
     .project-image img {
-      width: 100%;
-      max-width: 720px;
-      border-radius: 12px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+      width: 85%;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+    .nav-left {
+      font-size: 20px;
     }
   </style>
 </head>
@@ -251,31 +255,29 @@
 
       <section class="project-list">
         <!-- Project 1 -->
-        <article class="project-item">
-          <div class="project-header">
-            <div class="project-title">PatchLens: Assistive WSI Viewer for GI Pathology</div>
-            <div class="project-meta">2024 – ongoing</div>
-            <div class="project-image">
-              <img src="images/PatchLens.png" alt="PatchLens Screenshot">
-            </div>
-          </div>
-          <div class="project-badges">
-            <span class="project-badge">Computational Pathology</span>
-            <span class="project-badge">VAE Anomaly Detection</span>
-            <span class="project-badge">Web-based System</span>
-          </div>
-          <p class="project-description">
-            Designed and implemented a web-based viewer for gigapixel whole slide images (WSIs) with
-            VAE-based anomaly detection, p-value & likelihood-ratio heatmaps, and assist-on/off diagnostic
-            modes. The system is being tested with GI pathologists to evaluate its impact on diagnostic
-            workflow and efficiency.
-          </p>
-          <!-- 如果有 demo 链接，可以在这里加：
-          <p class="project-links">
-            <a class="project-link" href="#" target="_blank" rel="noopener">Demo (internal)</a>
-          </p>
-          -->
-        </article>
+      <article class="project-item">
+        <div class="project-header">
+          <div class="project-title">PatchLens: Assistive WSI Viewer for GI Pathology</div>
+          <div class="project-meta">2024 – ongoing</div>
+        </div>
+      
+        <div class="project-image">
+          <img src="images/PatchLens.png" alt="PatchLens Screenshot">
+        </div>
+      
+        <div class="project-badges">
+          <span class="project-badge">Computational Pathology</span>
+          <span class="project-badge">Applicable AI System</span>
+        </div>
+      
+        <p class="project-description">
+          Designed and implemented a web-based viewer for gigapixel whole slide images (WSIs) that leverages an unsupervised, 
+          pan-disease anomaly detection framework to highlight regions of potential pathological significance. 
+          The system integrates statistical modeling with machine learning–driven feature representations, 
+          enabling quantitative heatmaps and assist-on/off diagnostic modes. 
+          It is currently being tested with GI pathologists to evaluate its impact on diagnostic workflow and efficiency.
+        </p>
+      </article>
 
         <!-- Project 2 -->
         <article class="project-item">
