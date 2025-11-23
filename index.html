@@ -35,9 +35,10 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* 所有正文链接：蓝色 + 下划线 */
     a {
-      color: inherit;
-      text-decoration: none;
+      color: #2563eb;
+      text-decoration: underline;
     }
 
     .page {
@@ -65,12 +66,8 @@
       color: #4b5563;
     }
 
-    .nav-dot {
-      width: 9px;
-      height: 9px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 30%, #ffffff 0, #22c55e 45%, #15803d 100%);
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.15);
+    .nav-icon {
+      font-size: 16px;
     }
 
     .nav-links {
@@ -78,6 +75,12 @@
       gap: 18px;
       font-size: 14px;
       color: #4b5563;
+    }
+
+    /* 导航里的链接保持干净，没有下划线 */
+    .nav-links a {
+      color: #4b5563;
+      text-decoration: none;
     }
 
     .nav-link {
@@ -136,23 +139,6 @@
       margin-bottom: 12px;
     }
 
-    .hero-title {
-      font-size: 28px;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      margin-bottom: 4px;
-    }
-
-    .hero-subtitle {
-      font-size: 14px;
-      color: var(--text-muted);
-    }
-
-    .hero-subtitle strong {
-      color: #111827;
-      font-weight: 600;
-    }
-
     .hero-body {
       margin-top: 14px;
       font-size: 14px;
@@ -165,6 +151,7 @@
       border-radius: 6px;
     }
 
+    /* 顶部标签（旧 hero-tag） */
     .tag-row {
       margin-top: 14px;
       display: flex;
@@ -172,9 +159,10 @@
       gap: 8px;
     }
 
+    /* tag 字体调大，比正文更显眼 */
     .tag {
-      font-size: 11px;
-      padding: 4px 9px;
+      font-size: 13px;
+      padding: 6px 12px;
       border-radius: 999px;
       background: #eff6ff;
       color: #1d4ed8;
@@ -254,80 +242,103 @@
       text-align: center;
     }
 
-    .profile-avatar {
-      margin-bottom: 14px;
-    }
+    /* --- 简化后的 sidebar（老师那种风格） --- */
 
-    .profile-avatar img {
-      width: 120px;
-      height: 120px;
-      border-radius: 32px;
-      object-fit: cover;
-      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.35);
-      border: 3px solid #ffffff;
-    }
-
-    .profile-name {
-      font-weight: 600;
-      font-size: 16px;
-    }
-
-    .profile-meta {
-      margin-top: 3px;
-      font-size: 11px;
-      color: #6b7280;
-    }
-
-    .profile-role {
-      margin-top: 10px;
-      font-size: 12px;
-      color: #111827;
-    }
-
-    .profile-badges {
-      margin-top: 8px;
-      display: inline-flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .badge-soft {
-      font-size: 11px;
-      padding: 4px 9px;
-      border-radius: 999px;
-      background: #eef2ff;
-      color: #4338ca;
-      border: 1px solid #e0e7ff;
-    }
-
-    .profile-links {
-      margin-top: 12px;
+    .profile-sidebar {
+      flex: 0 0 320px;
       display: flex;
-      gap: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
+      justify-content: flex-start;
     }
 
-    .btn-mini {
-      font-size: 11px;
-      padding: 5px 11px;
+    .sidebar-card.sidebar-simple-card {
+      width: 100%;
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+      padding: 24px 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .sidebar-avatar-wrapper {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #e5e7eb;
+      margin-bottom: 4px;
+    }
+
+    .sidebar-avatar-circle {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .sidebar-name {
+      font-size: 22px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    .sidebar-alias {
+      font-size: 12px;
+      color: #6b7280;
+      margin-top: -2px;
+    }
+
+    .sidebar-affiliation {
+      font-size: 13px;
+      text-align: center;
+      line-height: 1.4;
+      color: #4b5563;
+    }
+
+    .sidebar-affiliation a {
+      text-decoration: underline;
+    }
+
+    .sidebar-contact-row {
+      width: 100%;
+      font-size: 13px;
+      color: #4b5563;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      justify-content: center;
+    }
+
+    .sidebar-icon {
+      font-size: 14px;
+    }
+
+    .sidebar-links {
+      display: flex;
+      gap: 8px;
+      margin-top: 8px;
+    }
+
+    .sidebar-icon-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
       border-radius: 999px;
       border: 1px solid #e5e7eb;
+      font-size: 12px;
+      font-weight: 600;
+      color: #374151;
       background: #f9fafb;
-      cursor: pointer;
-      transition: background 0.12s, transform 0.12s;
+      text-decoration: none;
     }
 
-    .btn-mini:hover {
-      background: #f3f4f6;
-      transform: translateY(-1px);
-    }
-
-    .profile-footnote {
-      margin-top: 10px;
-      font-size: 11px;
-      color: #9ca3af;
+    .sidebar-links a:hover .sidebar-icon-button {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
     }
 
     /* About & highlights */
@@ -358,19 +369,6 @@
       margin: 3px 0;
     }
 
-    .pill-label {
-      display: inline-flex;
-      align-items: center;
-      padding: 3px 8px;
-      border-radius: 999px;
-      background: #ecfeff;
-      border: 1px solid #cffafe;
-      font-size: 11px;
-      color: #0f766e;
-      font-weight: 500;
-      margin-left: 6px;
-    }
-
     .highlight-list {
       font-size: 13px;
       color: #374151;
@@ -397,6 +395,13 @@
       margin-left: 6px;
     }
 
+    .research-tags {
+      margin: 10px 0 10px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
     /* Footer */
     .page-footer {
       margin-top: 26px;
@@ -416,140 +421,26 @@
       .card {
         padding: 20px 18px;
       }
-      .hero-title {
-        font-size: 24px;
-      }
       .nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
       }
     }
-    /* --- Simple sidebar card (prof-style) --- */
 
-    .profile-sidebar {
-      flex: 0 0 320px;
-      display: flex;
-      justify-content: flex-start;
-    }
-    
-    .sidebar-card.sidebar-simple-card {
-      width: 100%;
-      background: #ffffff;
-      border-radius: 24px;
-      box-shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
-      padding: 24px 24px 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-    
-    /* 头像圆形 */
-    .sidebar-avatar-wrapper {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      overflow: hidden;
-      border: 3px solid #e5e7eb;
-      margin-bottom: 4px;
-    }
-    
-    .sidebar-avatar-circle {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    
-    /* 姓名 */
-    .sidebar-name {
-      font-size: 22px;
-      font-weight: 700;
-      color: #0f172a;
-    }
-    
-    /* 单位链接 */
-    .sidebar-affiliation {
-      font-size: 13px;
-      text-align: center;
-      line-height: 1.4;
-      color: #4b5563;
-    }
-    
-    .sidebar-affiliation a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    
-    .sidebar-affiliation a:hover {
-      text-decoration: underline;
-    }
-    
-    /* 地址 & 邮箱 */
-    .sidebar-contact-row {
-      width: 100%;
-      font-size: 13px;
-      color: #4b5563;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      justify-content: center;
-    }
-    
-    .sidebar-contact-row a {
-      color: #2563eb;
-      text-decoration: none;
-    }
-    
-    .sidebar-contact-row a:hover {
-      text-decoration: underline;
-    }
-    
-    .sidebar-icon {
-      font-size: 14px;
-    }
-    
-    /* 社交链接图标按钮 */
-    .sidebar-links {
-      display: flex;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    
-    .sidebar-icon-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid #e5e7eb;
-      font-size: 12px;
-      font-weight: 600;
-      color: #374151;
-      background: #f9fafb;
-    }
-    
-    .sidebar-links a:hover .sidebar-icon-button {
-      background: #2563eb;
-      border-color: #2563eb;
-      color: #ffffff;
-    }
-    
-    /* 小屏幕下放到上面居中 */
     @media (max-width: 900px) {
       .profile-layout {
         flex-direction: column;
       }
-    
+
       .profile-sidebar {
         flex: none;
         width: 100%;
         justify-content: center;
-        order: -1; /* 头像上移到最前面 */
+        order: -1;
         margin-bottom: 16px;
       }
-    
+
       .sidebar-card.sidebar-simple-card {
         max-width: 360px;
       }
@@ -561,59 +452,61 @@
     <!-- NAVBAR -->
     <header class="nav">
       <div class="nav-left">
-        <div class="nav-dot"></div>
-        <span>Finn Guo</span>
+        <span class="nav-icon">🧬 + 💻 + 🩻</span>
       </div>
       <nav class="nav-links">
         <a class="nav-link active" href="/">Home</a>
-        <a class="nav-link" href="/projects.html">Projects</a>
+        <!-- 注意：这里用的是 project.html（单数），和你文件名保持一致 -->
+        <a class="nav-link" href="/project.html">Projects</a>
         <a class="nav-link" href="/files/Finn_Guo_CV.pdf" target="_blank" rel="noopener">CV</a>
       </nav>
     </header>
 
     <!-- MAIN LAYOUT -->
     <main class="layout-main">
-      <!-- LEFT: HERO + ABOUT + HIGHLIGHTS -->
+      <!-- LEFT: ABOUT + RESEARCH + HIGHLIGHTS -->
       <section>
-        <!-- HERO CARD -->
+        <!-- ABOUT / HERO CARD -->
         <article class="card">
           <header class="card-header">
-            <h1 class="hero-title">Finn Guo</h1>
-            <p class="hero-subtitle">
-              (also by Xiaofeng Guo)M.S. Student, <strong>Electrical &amp; Computer Engineering</strong> @ Duke University
-            </p>
+            <h2 class="section-title">About</h2>
           </header>
+          <div class="section-body">
             <p>
               I'm a master's student in Electrical &amp; Computer Engineering at Duke University, advised by
-              <a href="https://rafa.physics.duke.edu/" target="_blank">Ricardo Henao</a> and
-              <a href="https://biostat.duke.edu/people/jichun-xie" target="_blank">Jichun Xie</a>.
-              I work with the <a href="https://medml.duke.edu/" target="_blank">Machine Learning in Healthcare group</a>
-              and the <a href="https://biostat.duke.edu/" target="_blank">Duke Biostatistics &amp; Bioinformatics Department</a>
+              <a href="https://rafa.physics.duke.edu/" target="_blank" rel="noopener">Ricardo Henao</a> and
+              <a href="https://biostat.duke.edu/people/jichun-xie" target="_blank" rel="noopener">Jichun Xie</a>.
+              I work with the <a href="https://medml.duke.edu/" target="_blank" rel="noopener">Machine Learning in Healthcare group</a>
+              and the <a href="https://biostat.duke.edu/" target="_blank" rel="noopener">Duke Biostatistics &amp; Bioinformatics Department</a>
               on AI systems that can be embedded into real clinical workflows.
             </p>
             <p>
               Before Duke, I completed my B.S. in Information Management &amp; Systems at Nankai University,
-              where I received solid training in programming, data systems, and product / UI design where is my great fortune to sing for 4 irreplacable years in NKChoir directed by Prof.Meng
+              where I received solid training in programming, data systems, and product / UI design, and spent four
+              unforgettable years singing in NKChoir directed by Prof. Meng.
             </p>
-          <div class="hero-body">
-           "A journey of a thousand miles begins with a single step."
+            <p class="hero-body">
+              "A journey of a thousand miles begins with a single step."
+            </p>
           </div>
         </article>
 
-        <!-- ABOUT CARD -->
+        <!-- RESEARCH INTEREST CARD -->
         <article class="card">
           <h2 class="section-title">Research Interest</h2>
-          <p>Broadly, my research interests include:</p>
-          <div class="research-tags">
-            <span class="tag">AI for Healthcare &amp; Clinical Decision Support</span>
-            <span class="tag">Computational Pathology &amp; Medical Imaging</span>
-            <span class="tag">Multimodal Modeling (WSI + text + EHR)</span>
-            <span class="tag">Uncertainty-aware &amp; Interpretable ML</span>
+          <div class="section-body">
+            <p>Broadly, my research interests include:</p>
+            <div class="research-tags">
+              <span class="tag">AI for Healthcare &amp; Clinical Decision Support</span>
+              <span class="tag">Computational Pathology &amp; Medical Imaging</span>
+              <span class="tag">Multimodal Modeling (WSI + text + EHR)</span>
+              <span class="tag">Uncertainty-aware &amp; Interpretable ML</span>
+            </div>
+            <p>
+              Long term, I aim to develop AI systems that bridge algorithmic intelligence and real clinical
+              practice, enabling pathologists and clinicians to make safer and more efficient decisions.
+            </p>
           </div>
-          <p>
-            Long term, I aim to develop AI systems that bridge algorithmic intelligence and real clinical
-            practice, enabling pathologists and clinicians to make safer and more efficient decisions.
-          </p>
         </article>
 
         <!-- HIGHLIGHTS CARD -->
@@ -659,32 +552,30 @@
             <div class="sidebar-avatar-wrapper">
               <img src="images/profile.jpg" alt="Finn Guo" class="sidebar-avatar-circle">
             </div>
-        
+
             <div class="sidebar-name">Finn Guo</div>
-        
+            <div class="sidebar-alias">(also by Xiaofeng Guo)</div>
+
             <div class="sidebar-affiliation">
               <a href="https://ece.duke.edu/" target="_blank" rel="noopener noreferrer">
-                Department of Electrical & Computer Engineering
+                Department of Electrical &amp; Computer Engineering
               </a><br>
               <a href="https://www.dukehealth.org/" target="_blank" rel="noopener noreferrer">
                 Duke University
               </a>
             </div>
-        
+
             <div class="sidebar-contact-row">
               <span class="sidebar-icon">📍</span>
               <span>Durham, NC, USA</span>
             </div>
-        
+
             <div class="sidebar-contact-row">
               <span class="sidebar-icon">✉️</span>
               <a href="mailto:xiaofeng.guo@duke.edu">xiaofeng.guo@duke.edu</a>
             </div>
-        
+
             <div class="sidebar-links">
-              <!-- <a href="https://scholar.google.com/你的ID" target="_blank" rel="noopener noreferrer" title="Google Scholar">
-                <span class="sidebar-icon-button">G</span>
-              </a> -->
               <a href="https://github.com/Finn9258" target="_blank" rel="noopener noreferrer" title="GitHub">
                 <span class="sidebar-icon-button">GH</span>
               </a>
