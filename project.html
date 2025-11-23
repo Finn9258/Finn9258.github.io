@@ -217,6 +217,17 @@
         padding: 20px 18px;
       }
     }
+    .project-image {
+      margin-top: 12px;
+      text-align: center;
+    }
+    
+    .project-image img {
+      width: 100%;
+      max-width: 720px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.10);
+    }
   </style>
 </head>
 <body>
@@ -244,6 +255,9 @@
           <div class="project-header">
             <div class="project-title">PatchLens: Assistive WSI Viewer for GI Pathology</div>
             <div class="project-meta">2024 – ongoing</div>
+            <div class="project-image">
+              <img src="images/PatchLens.png" alt="PatchLens Screenshot">
+            </div>
           </div>
           <div class="project-badges">
             <span class="project-badge">Computational Pathology</span>
@@ -271,6 +285,9 @@
             </div>
             <div class="project-meta">ML4H 2024 · accepted</div>
           </div>
+          <div class="project-image">
+            <img src="images/ML4H.png" alt="ML4H Diagram">
+          </div>
           <div class="project-badges">
             <span class="project-badge">AI for Health</span>
             <span class="project-badge">Clinical Text</span>
@@ -283,20 +300,28 @@
           </p>
         </article>
 
-        <!-- Project 3 (placeholder, 可以后再填) -->
+        <!-- Project 3 -->
         <article class="project-item">
           <div class="project-header">
-            <div class="project-title">Multimodal Alignment between WSIs and Clinical Knowledge</div>
-            <div class="project-meta">Exploratory</div>
+            <div class="project-title">ECG–Echo–CT Alignment for Cardiopulmonary Diagnostics</div>
+            <div class="project-meta">2024 – ongoing</div>
           </div>
+        
           <div class="project-badges">
             <span class="project-badge">Multimodal Learning</span>
-            <span class="project-badge">Knowledge Graphs</span>
+            <span class="project-badge">Clinical Reasoning</span>
+            <span class="project-badge">Representation Alignment</span>
           </div>
+        
           <p class="project-description">
-            Exploring methods to align image embeddings from pathology WSIs with structured knowledge graph
-            representations and clinical text, aiming to provide medically grounded suggestions and
-            patch-level explanations for pathologists.
+            Developing methods to align representations across ECG signals, echocardiography videos, and CT imaging 
+            using contrastive learning and temporal encoders. The goal is to enable cross-modal retrieval, improve 
+            diagnostic consistency, and provide clinically grounded predictions when only partial modalities are available.
+          </p>
+        
+          <p class="project-description">
+            Working under the supervision of <a href="https://rafa.github.io/" target="_blank">Prof. Ricardo Henao</a>,
+            this project explores how shared latent spaces can support cardiopulmonary risk stratification and early-stage clinical decision support.
           </p>
         </article>
       </section>
